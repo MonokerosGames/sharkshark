@@ -1,4 +1,3 @@
-
 extends KinematicBody2D
 
 export var gravity = 9.8
@@ -22,3 +21,7 @@ func _fixed_process(delta):
 	var movement = direction * swim_speed * delta
 	
 	move(movement)
+	
+func _on_hitbox_area_enter( area ):
+	if area.has_method("effect_on_player"):
+		area.effect_on_player(self)

@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=1]
+[gd_scene load_steps=4 format=1]
 
 [ext_resource path="res://scenes/fish_tank.tscn" type="PackedScene" id=1]
-[ext_resource path="res://scenes/player_fish.tscn" type="PackedScene" id=2]
+[ext_resource path="res://scenes/entities/player_fish.tscn" type="PackedScene" id=2]
+[ext_resource path="res://scenes/entities/stub_object.tscn" type="PackedScene" id=3]
 
 [node name="Node" type="Node"]
 
@@ -9,6 +10,14 @@
 
 [node name="player_fish" parent="fish_tank" instance=ExtResource( 2 )]
 
-transform/pos = Vector2( 483.081, 205.11 )
+transform/pos = Vector2( 531.665, 238.568 )
+
+[node name="stub_object" parent="fish_tank" instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 299.913, 311.274 )
+
+[node name="stub_object1" parent="fish_tank" instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 713.43, 297.641 )
 
 
