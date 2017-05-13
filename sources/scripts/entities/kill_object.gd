@@ -1,3 +1,4 @@
+
 extends Area2D
 
 func _ready():
@@ -7,4 +8,5 @@ func effect_on_player(player):
 	# destroy the object
 	queue_free()
 	
-	print("stub object picked")
+	# kills the fish
+	player.die()

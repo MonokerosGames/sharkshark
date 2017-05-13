@@ -3,6 +3,8 @@ extends KinematicBody2D
 export var gravity = 9.8
 export var swim_speed = 100
 
+signal die
+
 func _ready():
 	set_fixed_process(true)
 	
@@ -21,6 +23,10 @@ func _fixed_process(delta):
 	var movement = direction * swim_speed * delta
 	
 	move(movement)
+	
+func die():
+	queue_free()
+	emit_signal("die")
 	
 func _on_hitbox_area_enter( area ):
 	if area.has_method("effect_on_player"):

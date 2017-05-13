@@ -7,4 +7,5 @@ func effect_on_player(player):
 	# destroy the object
 	queue_free()
 	
-	print("stub object picked")
+	# speed up the fish
+	player.swim_speed *= 2

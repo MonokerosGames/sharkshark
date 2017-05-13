@@ -1,8 +1,10 @@
-[gd_scene load_steps=4 format=1]
+[gd_scene load_steps=6 format=1]
 
 [ext_resource path="res://scenes/fish_tank.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scenes/entities/player_fish.tscn" type="PackedScene" id=2]
 [ext_resource path="res://scenes/entities/stub_object.tscn" type="PackedScene" id=3]
+[ext_resource path="res://scenes/entities/kill_object.tscn" type="PackedScene" id=4]
+[ext_resource path="res://scenes/entities/speedup_object.tscn" type="PackedScene" id=5]
 
 [node name="Node" type="Node"]
 
@@ -16,8 +18,16 @@ transform/pos = Vector2( 531.665, 238.568 )
 
 transform/pos = Vector2( 299.913, 311.274 )
 
-[node name="stub_object1" parent="fish_tank" instance=ExtResource( 3 )]
+[node name="kill_object" parent="fish_tank" instance=ExtResource( 4 )]
 
-transform/pos = Vector2( 713.43, 297.641 )
+transform/pos = Vector2( 447.609, 449.279 )
+
+[node name="speedup_object" parent="fish_tank" instance=ExtResource( 5 )]
+
+transform/pos = Vector2( 793.336, 340.717 )
+
+[node name="speedup_object 2" parent="fish_tank" instance=ExtResource( 5 )]
+
+transform/pos = Vector2( 190.401, 168.688 )
 
 
