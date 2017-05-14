@@ -1,6 +1,5 @@
 extends "res://scripts/entities/enemy_fish.gd"
 
-export var swim_speed = 100
 export (NodePath) var target_path
 
 func _ready():

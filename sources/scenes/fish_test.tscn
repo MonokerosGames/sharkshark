@@ -20,6 +20,10 @@ transform/pos = Vector2( 531.665, 238.568 )
 
 transform/pos = Vector2( 641.35, 370.78 )
 
+[node name="enemy_fish1" parent="fish_tank" instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 641.35, 370.78 )
+
 [node name="stub_object" parent="fish_tank" instance=ExtResource( 4 )]
 
 transform/pos = Vector2( 299.913, 311.274 )

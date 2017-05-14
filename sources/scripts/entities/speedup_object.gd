@@ -3,9 +3,9 @@ extends Area2D
 func _ready():
 	pass
 
-func effect_on_player(player):
+func effect_on_other(other):
 	# destroy the object
 	queue_free()
 	
 	# speed up the fish
-	player.swim_speed *= 2
+	other.swim_speed *= 2
