@@ -39,7 +39,6 @@ transform/pos = Vector2( 190.401, 168.688 )
 [node name="following_enemy_fish" parent="fish_tank" instance=ExtResource( 7 )]
 
 transform/pos = Vector2( 136.955, 474.332 )
-swim_speed = 100
 target_path = NodePath("../player_fish")
 
 

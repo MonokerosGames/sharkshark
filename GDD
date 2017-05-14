@@ -1,0 +1,24 @@
+Shark! Shark!
+
+Déplacement du player :
+	- Il commence immobile
+	- Une fois qu'une direction a été pressée, le joueur continue son déplacement dans cette direction et ne peut plus s'arreter
+	- Si la direction est maintenue, le joueur se déplace plus rapidement dans la direction tant que le bouton est maintenu
+
+	- Direction : Droite, Gauche, Haut, Bas et les diagonales sont possibles
+	- Le joueur est bloqué au bord de l'écran.
+	- Si le joueur est en haut de l'écran et qu'il appuie sur la diagonale Haut-Droite, il va à droite (il ne reste pas bloqué comme actuellement)
+
+Déplacement des autres poissons :
+	- Ils ne restent pas bloqués au bord de l'écran
+	- De manière générale ils se déplacement horizontalement
+	- Ils peuvent changer de direction pour fuir un danger potentiel
+	- Ils peuvent changer de direction pour atteindre une proie
+	- Le changement de direction ne consiste pas à suivre la cible mais de décider d'une direction et de s'y tenir peu importe si la cible change de direction elle aussi
+
+Manger :
+	- Si on mange on gagne du score
+	- Tous les 1000 de score on grossi
+	- Quand le player rentre dans un autre poisson il le mange si il est plus grand ou de la même taille ou se fait manger sinon.
+	- Quand un poisson rentre dans un autre poisson il le mange si il est plus grand, se fait manger si il est plus petit, rien ne se passe, les poissons se traversent si ils ont la même taille.
+	- Quand on grossi on est plus rapide
