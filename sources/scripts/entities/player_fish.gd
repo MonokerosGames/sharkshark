@@ -22,5 +22,4 @@ func _fixed_process(delta):
 	move(movement)
 	
 func on_same_size_fish_collision(other_fish):
-	print("okplayer")
 	eat(other_fish)

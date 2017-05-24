@@ -23,7 +23,7 @@ func on_fish_collision(other_fish):
 	elif other_fish.size > size:
 		on_bigger_fish_collision(other_fish)
 	else:
-		self.on_same_size_fish_collision(other_fish)
+		on_same_size_fish_collision(other_fish)
 
 func on_smaller_fish_collision(other_fish):
 	eat(other_fish)
@@ -32,7 +32,7 @@ func on_bigger_fish_collision(other_fish):
 	pass
 	
 func on_same_size_fish_collision(other_fish):
-	print("okfish")
+	pass
 
 func _on_hitbox_area_enter( other_area ):
 	var other_fish = other_area.get_parent()
