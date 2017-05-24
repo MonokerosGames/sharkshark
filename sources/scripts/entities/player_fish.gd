@@ -15,6 +15,8 @@ func _fixed_process(delta):
 	if Input.is_action_pressed("move_left"):
 		direction.x -= 1
 
+	direction = direction.normalized()
+
 	var movement = direction * swim_speed * delta
 	
 	move(movement)
