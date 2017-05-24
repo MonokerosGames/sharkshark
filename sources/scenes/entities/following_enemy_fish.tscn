@@ -6,7 +6,10 @@
 [node name="following_enemy_fish" instance=ExtResource( 1 )]
 
 script/script = ExtResource( 2 )
-swim_speed = 100
 target_path = null
+
+[node name="sprite" parent="."]
+
+modulate = Color( 1, 0.914063, 0, 1 )
 
 

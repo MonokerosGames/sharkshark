@@ -19,6 +19,6 @@ func _fixed_process(delta):
 	
 	move(movement)
 	
-func effect_on_other(other):
-	if other.size <= size && other != self:
-		eat(other)
+func on_same_size_fish_collision(other_fish):
+	print("okplayer")
+	eat(other_fish)

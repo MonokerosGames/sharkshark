@@ -15,24 +15,26 @@ func eat(fish):
 func die():
 	queue_free()
 	emit_signal("die")
+
+
+func on_fish_collision(other_fish):
+	if other_fish.size < size:
+		on_smaller_fish_collision(other_fish)
+	elif other_fish.size > size:
+		on_bigger_fish_collision(other_fish)
+	else:
+		self.on_same_size_fish_collision(other_fish)
+
+func on_smaller_fish_collision(other_fish):
+	eat(other_fish)
+
+func on_bigger_fish_collision(other_fish):
+	pass
 	
-func effect_on_other(other):
-	if other.size < size:
-		eat(other)
-		
-func effect_from_other(other):
-	other.effect_on_other(self)
-	
-func _on_hitbox_area_enter( area ):	
-	print("prout")
-	if area.has_method("effect_from_other"):
-		area.effect_from_other(self)
-	if area.has_method("effect_on_other"):
-		area.effect_on_other(self)
+func on_same_size_fish_collision(other_fish):
+	print("okfish")
 
-func _on_hitbox_effect_from_other(other):
-	effect_from_other(other)
-
-
-func _on_hitbox_effect_on_other(other):
-	effect_on_other(other)
+func _on_hitbox_area_enter( other_area ):
+	var other_fish = other_area.get_parent()
+	if other_fish.has_method("on_fish_collision") :
+		on_fish_collision(other_fish)
