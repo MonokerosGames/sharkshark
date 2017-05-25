@@ -1,5 +1,7 @@
 extends "res://scripts/entities/fish.gd"
 
+var old_direction = Vector2(0, 0)
+
 func _ready():
 	set_fixed_process(true)
 	
@@ -16,17 +18,24 @@ func _fixed_process(delta):
 		direction.x -= 1
 
 	direction = direction.normalized()
-
+	
+	# compute new motion
 	var movement = direction * swim_speed * delta
 	
+	# add old motion
+	movement += old_direction * swim_speed * delta
+	
+	# move
 	movement = move(movement)
 	
-	# slide along walls
-	
+	# slide along walls	
 	if (is_colliding()):
 		var normale = get_collision_normal()
 		movement = normale.slide(movement)
 		move(movement)
+	
+	if direction != Vector2(0,0):
+		old_direction = direction
 	
 func on_same_size_fish_collision(other_fish):
 	eat(other_fish)
