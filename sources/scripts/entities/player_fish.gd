@@ -19,7 +19,14 @@ func _fixed_process(delta):
 
 	var movement = direction * swim_speed * delta
 	
-	move(movement)
+	movement = move(movement)
+	
+	# slide along walls
+	
+	if (is_colliding()):
+		var normale = get_collision_normal()
+		movement = normale.slide(movement)
+		move(movement)
 	
 func on_same_size_fish_collision(other_fish):
 	eat(other_fish)
