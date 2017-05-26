@@ -1,6 +1,8 @@
 extends "res://scripts/entities/fish.gd"
 
 var old_direction = Vector2(0, 0)
+var time_wait_direction_update = 0
+var time_before_direction_update = .1
 
 func _ready():
 	set_fixed_process(true)
@@ -35,7 +37,16 @@ func _fixed_process(delta):
 		move(movement)
 	
 	if direction != Vector2(0,0):
-		old_direction = direction
+		# wait some time before updating directions with diagonals
+		if old_direction.x != 0 && old_direction.y != 0 \
+		&& ((direction.x == 0) != (direction.y == 0)) \
+		&& time_wait_direction_update < time_before_direction_update:
+			time_wait_direction_update += delta
+		else:
+			old_direction = direction
+			time_wait_direction_update = 0
+	
+	time_wait_direction_update += delta
 	
 func on_same_size_fish_collision(other_fish):
 	eat(other_fish)
