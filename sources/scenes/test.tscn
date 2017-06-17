@@ -7,7 +7,7 @@
 [ext_resource path="res://scenes/entities/following_enemy_fish.tscn" type="PackedScene" id=5]
 [ext_resource path="res://scenes/entities/moving_fish.tscn" type="PackedScene" id=6]
 
-[node name="Node" type="Node"]
+[node name="test" type="Node"]
 
 [node name="fish_tank" parent="." instance=ExtResource( 1 )]
 

@@ -3,22 +3,22 @@
 [sub_resource type="ConvexPolygonShape2D" id=1]
 
 custom_solver_bias = 0.0
-points = Vector2Array( 50, 50, 50, 0, 1050, 0, 950, 50 )
+points = Vector2Array( 50, 50, 50, 0, 1920, 0, 1861, 50 )
 
 [sub_resource type="ConvexPolygonShape2D" id=2]
 
 custom_solver_bias = 0.0
-points = Vector2Array( 950, 50, 1050, 0, 1050, 600, 950, 550 )
+points = Vector2Array( 1861, 50, 1920, 0, 1920, 1080, 1863, 1012 )
 
 [sub_resource type="ConvexPolygonShape2D" id=3]
 
 custom_solver_bias = 0.0
-points = Vector2Array( 950, 550, 1050, 600, 0, 600, 50, 550 )
+points = Vector2Array( 1863, 1012, 1920, 1080, 0, 1080, 50, 1012 )
 
 [sub_resource type="ConvexPolygonShape2D" id=4]
 
 custom_solver_bias = 0.0
-points = Vector2Array( 50, 550, 0, 600, 0, 0, 50, 0 )
+points = Vector2Array( 50, 1012, 0, 1080, 0, 0, 50, 0 )
 
 [node name="fish_tank" type="StaticBody2D"]
 
@@ -44,7 +44,7 @@ bounce = 0.0
 
 [node name="polygon" type="Polygon2D" parent="."]
 
-polygon = Vector2Array( 1050, 0, 1050, 600, 0, 600, 0, 0, 50, -50, 50, 550, 950, 550, 950, 50, 50, 50, 50, 0 )
+polygon = Vector2Array( 1920, 0, 1920, 1080, 0, 1080, 0, 0, 50, -50, 50, 1012, 1863, 1012, 1861, 50, 50, 50, 50, 0 )
 uv = Vector2Array(  )
 color = Color( 1, 1, 1, 1 )
 vertex_colors = ColorArray(  )
@@ -59,7 +59,7 @@ invert/border = 100.0
 [node name="collision_polygon" type="CollisionPolygon2D" parent="."]
 
 build_mode = 0
-polygon = Vector2Array( 50, 50, 950, 50, 950, 550, 50, 550, 50, 0, 0, 0, 0, 600, 1050, 600, 1050, 0, 50, 0 )
+polygon = Vector2Array( 50, 50, 1861, 50, 1863, 1012, 50, 1012, 50, 0, 0, 0, 0, 1080, 1920, 1080, 1920, 0, 50, 0 )
 shape_range = Vector2( 0, 3 )
 trigger = false
 

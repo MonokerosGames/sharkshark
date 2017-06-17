@@ -1,0 +1,22 @@
+[gd_scene load_steps=3 format=1]
+
+[ext_resource path="res://scripts/main.gd" type="Script" id=1]
+[ext_resource path="res://scenes/main_menu.tscn" type="PackedScene" id=2]
+
+[node name="main" type="Node"]
+
+script/script = ExtResource( 1 )
+game = "res://scenes/test.tscn"
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+layer = 1
+offset = Vector2( 0, 0 )
+rotation = 0.0
+scale = Vector2( 1, 1 )
+
+[node name="main_menu" parent="CanvasLayer" instance=ExtResource( 2 )]
+
+[connection signal="play" from="CanvasLayer/main_menu" to="." method="_on_play"]
+
+
