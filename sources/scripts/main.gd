@@ -4,7 +4,14 @@ export(String, FILE, "*.tscn") var game
 onready var game_scn = load(game)
 
 func _ready():
-	pass
+	get_tree().set_auto_accept_quit(false)
+	
+func _notification(what):
+	if (what == MainLoop.NOTIFICATION_WM_QUIT_REQUEST):
+		if get_node("test") == null:
+			get_tree().quit() # default behavior
+		else:
+			_on_game_over()
 
 func _on_play():
 	get_node("CanvasLayer/main_menu").hide()
